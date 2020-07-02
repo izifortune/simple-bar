@@ -1,0 +1,28 @@
+{
+    "wallpaper": "/Users/fortune/wallpapers/andre-abreu-FW5Es_Bt1Zk-unsplash.jpg",
+    "alpha": "100",
+
+    "special": {
+        "background": "#081625",
+        "foreground": "#e4dfd0",
+        "cursor": "#e4dfd0"
+    },
+    "colors": {
+        "color0": "#081625",
+        "color1": "#798275",
+        "color2": "#298A86",
+        "color3": "#5F9D94",
+        "color4": "#9DAD9D",
+        "color5": "#C2BDA7",
+        "color6": "#D5CFB5",
+        "color7": "#e4dfd0",
+        "color8": "#9f9c91",
+        "color9": "#798275",
+        "color10": "#298A86",
+        "color11": "#5F9D94",
+        "color12": "#9DAD9D",
+        "color13": "#C2BDA7",
+        "color14": "#D5CFB5",
+        "color15": "#e4dfd0"
+    }
+}
