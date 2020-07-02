@@ -19,6 +19,7 @@ WIFI_SSID=$(networksetup -getairportnetwork en0 | cut -c 24-)
 
 VOLUME=$(osascript -e 'set ovol to output volume of (get volume settings)')
 MUTED=$(osascript -e 'set ovol to output muted of (get volume settings)')
+MIC=$(osascript -e 'set ovol to input volume of (get volume settings)')
 
 echo $(cat <<-EOF
   {
@@ -35,6 +36,9 @@ echo $(cat <<-EOF
     "sound": {
       "volume": "$VOLUME",
       "muted": "$MUTED"
+    },
+    "mic": {
+      "volume": "$MIC"
     }
   }
 EOF

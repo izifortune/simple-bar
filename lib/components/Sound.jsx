@@ -9,8 +9,8 @@ const Sound = ({ output }) => {
     isMuted && volume !== '0' ? VolumeMuted : volume === '0' ? NoVolume : volume < 50 ? VolumeLow : VolumeHigh;
 
   return (
-    <div className="sound">
-      <Icon className="sound__icon" />
+    <div className="pill sound">
+      <Icon className="pill__icon sound__icon" />
       {volume}%
     </div>
   );
