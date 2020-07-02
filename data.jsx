@@ -10,7 +10,7 @@ import { parseJson } from './lib/utils.js'
 import { MicStyles, PillStyles, DateStyles, TimeStyles, BatteryStyles, WifiStyles, SoundStyles } from './lib/styles/Styles.js'
 import { Theme } from './lib/styles/Theme.js'
 
-const refreshFrequency = 150
+const refreshFrequency = 10000
 
 const className = `
   .simple-bar__error,
