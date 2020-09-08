@@ -20,6 +20,7 @@ WIFI_SSID=$(networksetup -getairportnetwork en0 | cut -c 24-)
 VOLUME=$(osascript -e 'set ovol to output volume of (get volume settings)')
 MUTED=$(osascript -e 'set ovol to output muted of (get volume settings)')
 MIC=$(osascript -e 'set ovol to input volume of (get volume settings)')
+MEM=$(top -l 1 | grep -E "^Phys" | awk '{print $2, $6}')
 
 echo $(cat <<-EOF
   {
@@ -32,6 +33,9 @@ echo $(cat <<-EOF
     "wifi": {
       "status": "$WIFI_STATUS",
       "ssid": "$WIFI_SSID"
+    },
+    "memory": {
+      "usage": "$MEM"
     },
     "sound": {
       "volume": "$VOLUME",

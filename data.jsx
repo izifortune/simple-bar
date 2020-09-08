@@ -4,6 +4,7 @@ import Battery from './lib/components/Battery.jsx'
 import Sound from './lib/components/Sound.jsx'
 import Mic from './lib/components/Mic.jsx'
 import Wifi from './lib/components/Wifi.jsx'
+import Memory from './lib/components/Memory.jsx';
 
 import { parseJson } from './lib/utils.js'
 
@@ -45,13 +46,15 @@ const render = ({ output, error }) => {
   if (!output || error) return <div className="simple-bar__error">Something went wrong...</div>
   const data = parseJson(output)
   if (!data) return <div className="simple-bar__error">JSON error...</div>
-  const { time, battery, wifi, sound, mic } = data
+  const { time, battery, wifi, sound, mic, memory } = data
+  console.log(memory);
   return (
     <div className="simple-bar__data">
       <Battery output={battery} />
       <Sound output={sound} />
       <Mic output={mic} />
       <Wifi output={wifi} />
+      <Memory output={memory}/>
       <DateDisplay />
       <Time output={time} />
     </div>

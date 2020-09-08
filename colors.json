@@ -1,28 +1,28 @@
 {
-    "wallpaper": "/Users/fortune/wallpapers/andre-abreu-FW5Es_Bt1Zk-unsplash.jpg",
+    "wallpaper": "/Users/fortunatof/wallpapers/5z8llosyoej51.jpg",
     "alpha": "100",
 
     "special": {
-        "background": "#081625",
-        "foreground": "#e4dfd0",
-        "cursor": "#e4dfd0"
+        "background": "#0d181c",
+        "foreground": "#d4e0cc",
+        "cursor": "#d4e0cc"
     },
     "colors": {
-        "color0": "#081625",
-        "color1": "#798275",
-        "color2": "#298A86",
-        "color3": "#5F9D94",
-        "color4": "#9DAD9D",
-        "color5": "#C2BDA7",
-        "color6": "#D5CFB5",
-        "color7": "#e4dfd0",
-        "color8": "#9f9c91",
-        "color9": "#798275",
-        "color10": "#298A86",
-        "color11": "#5F9D94",
-        "color12": "#9DAD9D",
-        "color13": "#C2BDA7",
-        "color14": "#D5CFB5",
-        "color15": "#e4dfd0"
+        "color0": "#0d181c",
+        "color1": "#35BCA2",
+        "color2": "#4DB896",
+        "color3": "#5DCA9D",
+        "color4": "#70D3A2",
+        "color5": "#9FD49F",
+        "color6": "#AECE91",
+        "color7": "#d4e0cc",
+        "color8": "#949c8e",
+        "color9": "#35BCA2",
+        "color10": "#4DB896",
+        "color11": "#5DCA9D",
+        "color12": "#70D3A2",
+        "color13": "#9FD49F",
+        "color14": "#AECE91",
+        "color15": "#d4e0cc"
     }
 }
