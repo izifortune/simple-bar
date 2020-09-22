@@ -5,9 +5,9 @@ import { parseJson } from './lib/utils.js'
 import { ProcessStyles } from './lib/styles/Styles.js'
 import { Theme } from './lib/styles/Theme.js'
 
-const refreshFrequency = 10000
+const refreshFrequency = false
 
-const className = `
+const className = /* css */ `
   .simple-bar {
     position: fixed;
     top: 0;
@@ -20,9 +20,15 @@ const className = `
     box-sizing: border-box;
     color: white;
     font-family: ${Theme.font};
-    font-size: 12px;
-    background-color: ${Theme.main};
+    font-size: 11px;
+    background-color: ${Theme.background};
     z-index: 0;
+  }
+  @media (prefers-color-scheme: light) {
+    .simple-bar {
+      color: ${Theme.main};
+      background-color: white;
+    }
   }
   .simple-bar--empty {
     text-align: center;

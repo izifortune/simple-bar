@@ -22,13 +22,19 @@ MUTED=$(osascript -e 'set ovol to output muted of (get volume settings)')
 MIC=$(osascript -e 'set ovol to input volume of (get volume settings)')
 MEM=$(top -l 1 | grep -E "^Phys" | awk '{print $2, $6}')
 
+SPOTIFY_IS_RUNNING=$(osascript -e 'tell application "System Events" to (name of processes) contains "Spotify"')
+
+if [ "$SPOTIFY_IS_RUNNING" == true ]; then
+  SPOTIFY_PLAYER_STATE=$(osascript -e 'tell application "Spotify" to player state as string')
+  SPOTIFY_TRACK_NAME=$(osascript -e 'tell application "Spotify" to name of current track as string')
+  SPOTIFY_ARTIST_NAME=$(osascript -e 'tell application "Spotify" to artist of current track as string')
+fi
+
 echo $(cat <<-EOF
   {
-    "time": "$TIME",
     "battery": {
       "percentage": "$BATTERY_PERCENTAGE",
-      "charging": "$BATTERY_CHARGING",
-      "remaining": "$BATTERY_REMAINING"
+      "charging": "$BATTERY_CHARGING"
     },
     "wifi": {
       "status": "$WIFI_STATUS",
@@ -40,6 +46,12 @@ echo $(cat <<-EOF
     "sound": {
       "volume": "$VOLUME",
       "muted": "$MUTED"
+    },
+    "spotify": {
+      "spotifyIsRunning": "$SPOTIFY_IS_RUNNING",
+      "playerState": "$SPOTIFY_PLAYER_STATE",
+      "trackName": "$SPOTIFY_TRACK_NAME",
+      "artistName": "$SPOTIFY_ARTIST_NAME"
     },
     "mic": {
       "volume": "$MIC"

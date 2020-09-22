@@ -4,16 +4,17 @@ import Battery from './lib/components/Battery.jsx'
 import Sound from './lib/components/Sound.jsx'
 import Mic from './lib/components/Mic.jsx'
 import Wifi from './lib/components/Wifi.jsx'
+import Spotify from './lib/components/Spotify.jsx'
 import Memory from './lib/components/Memory.jsx';
 
 import { parseJson } from './lib/utils.js'
 
-import { MicStyles, PillStyles, DateStyles, TimeStyles, BatteryStyles, WifiStyles, SoundStyles } from './lib/styles/Styles.js'
+import { MicStyles, PillStyles, DateStyles, TimeStyles, BatteryStyles, WifiStyles, SoundStyles, SpotifyStyles } from './lib/styles/Styles.js'
 import { Theme } from './lib/styles/Theme.js'
 
 const refreshFrequency = 10000
 
-const className = `
+const className = /* css */ `
   .simple-bar__error,
   .simple-bar__data {
     position: fixed;
@@ -25,7 +26,7 @@ const className = `
     padding: 4px 5px;
     color: ${Theme.main};
     font-family: ${Theme.font};
-    font-size: 12px;
+    font-size: 11px;
     z-index: 1;
   }
   .simple-bar__data > *:not(:last-of-type) {
@@ -38,6 +39,7 @@ const className = `
   ${SoundStyles}
   ${PillStyles}
   ${MicStyles}
+  ${SpotifyStyles}
 `
 
 const command = 'bash simple-bar/lib/scripts/get_data.sh'
@@ -46,17 +48,17 @@ const render = ({ output, error }) => {
   if (!output || error) return <div className="simple-bar__error">Something went wrong...</div>
   const data = parseJson(output)
   if (!data) return <div className="simple-bar__error">JSON error...</div>
-  const { time, battery, wifi, sound, mic, memory } = data
-  console.log(memory);
+  const { time, battery, wifi, sound, mic, memory, spotify } = data
   return (
     <div className="simple-bar__data">
+      <Spotify output={spotify} />
       <Battery output={battery} />
       <Sound output={sound} />
       <Mic output={mic} />
       <Wifi output={wifi} />
       <Memory output={memory}/>
       <DateDisplay />
-      <Time output={time} />
+      <Time />
     </div>
   )
 }
